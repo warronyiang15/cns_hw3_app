@@ -1,5 +1,6 @@
 from flask import Flask, request, Response, make_response
 import base64
+import os
 
 app = Flask(__name__)
 
@@ -37,3 +38,5 @@ def index():
     else:
         return make_response("WTF", 401, "text/html")
 
+if __name__ == '__main__':
+      app.run(host='0.0.0.0', port=os.environ['PORT'])
